@@ -1,0 +1,6 @@
+request:
+    method: GET
+    url: .*text$
+response:
+    status: 200
+    body: Service Mocker is awesome!"

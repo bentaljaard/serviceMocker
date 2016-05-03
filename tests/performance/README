@@ -1,0 +1,7 @@
+In order to run the load test, follow the following steps:
+
+1. Run the master server (./runMaster.sh)
+2. Launch 2 slave servers (./runSlave.sh)
+3. Open a browser on your machine and go to http://localhost:8089. 
+4. Specify an amount of users and a spawn rate
+5. Launch your load test

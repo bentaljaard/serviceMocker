@@ -1,0 +1,153 @@
+request:
+    method: GET
+    url: .*/peal/api/baskets/.*$
+
+response:
+    status: 200
+    body: '
+{
+"basketId": "4000017737024",
+"customerId": "10013356",
+"itemsList": [
+{
+"basketItemId": 4000017737029,
+"action": "ADD",
+"productId": null,
+"currentProductId": null,
+"productName": "Home Security Management",
+"productDescription": "Home Surveillance Device",
+"oneTimePrice": 0,
+"recurringPrice": 20,
+"bundledItems": [],
+"childItems": [],
+"offerId": "2000000041013",
+"offerLines": [ {
+"objectId": "1000000001000",
+"description": "IOT",
+"extName": "IOT",
+"name": "IOT",
+"parentOfferline": null,
+"childOfferline": null
+}],
+"bomId": null,
+"hardwareName": null,
+"iccid": null,
+"msisdn": null,
+"simType": null,
+"serialNumber": null,
+"offerType": null,
+"priceIds": [],
+"cancellationReason": null,
+"cancellationSubReason": null,
+"competitorReason": null,
+"dispatchMethod": [],
+"paymentMethod": [],
+"parentBasketItemId": null,
+"parentBundleItemId": null,
+"replacementbasketItemId": null,
+"replacementRequired": null,
+"newHardware": false,
+"bindingDate": null,
+"missingReqOfferName": null,
+"deviceDetailPrice": 0,
+"resourceSpecType": null,
+"minimumContractPeriod": 0,
+"itemAction": null,
+"prices": [ {
+"type": "RECURRING",
+"amount": 0,
+"name": "20 EUR",
+"priceValue": {
+"amount": 20,
+"currencyCode": "EUR"
+},
+"percentValue": 0,
+"frequency": "MONTHLY",
+"priceId": "1000000001000",
+"recurrences": -1,
+"description": "20 EUR Price Point",
+"priceAlterations": null,
+"possiblePriceAlterations": null,
+"startInterval": 0,
+"endInterval": 0,
+"duration": 0,
+"installmentPriceValue": null
+}],
+"bundle": false
+},
+{
+"basketItemId": 4000017737025,
+"action": "NONE",
+"productId": "1000121900000",
+"currentProductId": null,
+"productName": "Internet 100 MB",
+"productDescription": "Broadband with 100 MB Download Speed",
+"oneTimePrice": 0,
+"recurringPrice": 0,
+"bundledItems": [],
+"childItems": [],
+"offerId": "2000000040258",
+"offerLines": [ {
+"objectId": "1000000000000",
+"description": "INTERNET",
+"extName": "INTERNET",
+"name": "INTERNET",
+"parentOfferline": null,
+"childOfferline": null
+}],
+"bomId": null,
+"hardwareName": null,
+"iccid": null,
+"msisdn": null,
+"simType": null,
+"serialNumber": null,
+"offerType": null,
+"priceIds": [],
+"cancellationReason": null,
+"cancellationSubReason": null,
+"competitorReason": null,
+"dispatchMethod": [],
+"paymentMethod": [],
+"parentBasketItemId": null,
+"parentBundleItemId": null,
+"replacementbasketItemId": null,
+"replacementRequired": null,
+"newHardware": false,
+"bindingDate": "01-01-1953",
+"missingReqOfferName": null,
+"deviceDetailPrice": 0,
+"resourceSpecType": null,
+"minimumContractPeriod": 0,
+"itemAction": null,
+"prices": [],
+"bundle": false
+}
+],
+"oneTimeTotalPrice": 0,
+"recurringTotalPrice": 20,
+"addressId": null,
+"lastName": null,
+"validationItems": [],
+"consolidate": null,
+"orderType": "PRODUCT_ORDER",
+"totOrdProdPriceWoDisc": 20,
+"totOrdProdPriceWitDisc": 20,
+"totOwnProdPriceWoDisc": 0,
+"totOwnProdPriceWitDisc": 0,
+"replacableItems": null,
+"purchasedProducts": null,
+"customerProfile": null,
+"deviceDetailPrice": 0,
+"loanDetails": null,
+"crossFootPrint": false,
+"subTotals": [],
+"engineeringAppointment": {
+"caseTypeIdentifier": null,
+"minDays": null,
+"maxDays": null,
+"appointmentAllowed": null
+}
+}
+' 
+    headers:
+        Content-type: application/json
