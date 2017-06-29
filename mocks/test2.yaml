@@ -1,0 +1,18 @@
+request:
+    method: GET
+    headers:
+      X-Test: .*02
+    url: .*test$
+response:
+    status: 200
+    body: '<?xml version="1.0" encoding="UTF-8" ?>
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">
+              <soapenv:Header/>
+              <soapenv:Body>
+                <exam:output>
+                  <exam:result>Success!Test02</exam:result>
+                </exam:output>
+              </soapenv:Body>
+            </soapenv:Envelope>'
+    headers:
+        Content-type: application/xml

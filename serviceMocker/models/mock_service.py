@@ -20,3 +20,8 @@ class MockService(object):
 
     def handles_request(self, other_request):
         return self.request == other_request
+
+    def assert_body(self, other_request):
+        return self.request.body_matches(other_request.body)
+
+        # TODO: expand to check body contents seperately

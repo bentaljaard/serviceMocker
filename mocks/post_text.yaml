@@ -1,0 +1,7 @@
+request:
+    method: POST
+    url: .*textpost$
+    body: "{'message':'ben'}"
+response:
+    status: 200
+    body: Service Mocker is awesome!"

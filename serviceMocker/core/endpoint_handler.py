@@ -17,7 +17,18 @@ class EndpointHandler(tornado.web.RequestHandler):
 
 	def put(self):
 		self.handle_endpoint()
+
+	def patch(self):
+		self.handle_endpoint()
+
+	def delete(self):
+		self.handle_endpoint()
+
+	def head(self):
+		self.handle_endpoint()
 		
+	def options(self):
+		self.handle_endpoint()
 
 	def handle_endpoint(self):
 		# load request into dict
@@ -33,13 +44,21 @@ class EndpointHandler(tornado.web.RequestHandler):
 		# details["body_arguments"] = self.request.body_arguments
 		# print(details)
 
-		response = self.dispatcher.get_response(self.to_mapper_request())
+		# response = self.dispatcher.get_response(self.to_mapper_request())
+		if len(self.dispatcher.get_mock(self.to_mapper_request())) > 0:
+			mock = self.dispatcher.get_mock(self.to_mapper_request())[0]
+			if not mock.assert_body(self.to_mapper_request()):
+				raise tornado.web.HTTPError(400)
+			else:
+				response = mock.response
+		else:
+			response = None
 		if not response:
 			raise tornado.web.HTTPError(404)
 		else:
-			for k, v in response[0].headers.items():
+			for k, v in response.headers.items():
 				self.set_header(k,v)
-			self.write(response[0].body_response())
+			self.write(response.body_response())
 
 
 	def to_mapper_request(self):

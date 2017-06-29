@@ -8,6 +8,7 @@ class MockRequest(object):
         self.url = request_dic.get("url", "")
         self.method = request_dic.get("method", "")
         self.headers = request_dic.get("headers", {})
+        # print(self.headers)
         self.body = request_dic.get("body", "")
 
     def __eq__(self, other):
@@ -21,7 +22,7 @@ class MockRequest(object):
         #     print("matches_method %d, matches_url %d, matches_body %d, matches_headers %d" %
         #           (matches_method, matches_url, matches_body, matches_headers))
 
-        return matches_method and matches_url and matches_body and matches_headers
+        return matches_method and matches_url and matches_headers #and matches_body
 
     def __ne__(self, other):
         return not self.__eq__(other)
@@ -33,6 +34,10 @@ class MockRequest(object):
         return re.match(self.url, url) is not None
 
     def body_matches(self, body):
+        # TODO: Extend the body matching function to see if the body contains a value instead/in addition to
+        # doing an exact match
+        # Set error code to Bad Request or some http error code when URL and headers are matched, but body match failed
+
         has_body = self.body != ""
         return re.match(self.body, body) if has_body else True
 

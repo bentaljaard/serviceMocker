@@ -31,6 +31,7 @@ class MockDispatcher(object):
 
     def get_mock(self, request):
         return [mock for mock in self.mocks if mock.handles_request(request)]
+        #TODO: expand to check if body value can be asserted, ie. handles request, but body matching fails
 
     def install_watchers(self):
         self.event_handler = MockDirectoryListener(self)
